@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Contact</title>
   <style>
     :root {
       color-scheme: dark;
@@ -33,6 +33,18 @@
         radial-gradient(circle at 82% 18%, rgba(255, 126, 182, 0.28), transparent 24rem),
         radial-gradient(circle at 50% 90%, rgba(249, 217, 118, 0.2), transparent 28rem),
         linear-gradient(135deg, #07111f 0%, #102132 52%, #160f27 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, black, transparent 76%);
     }
 
     nav {
@@ -67,18 +79,6 @@
     nav a[aria-current="page"] {
       color: var(--ink);
       background: rgba(255, 255, 255, 0.12);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(circle at center, black, transparent 76%);
     }
 
     main {
@@ -117,8 +117,8 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.8rem, 13vw, 8.8rem);
-      line-height: 0.92;
+      font-size: clamp(3.2rem, 10vw, 7rem);
+      line-height: 0.95;
       letter-spacing: 0;
       background: linear-gradient(90deg, #ffffff, var(--aqua), var(--rose), var(--gold));
       -webkit-background-clip: text;
@@ -135,13 +135,24 @@
       line-height: 1.7;
     }
 
-    .sparkline {
-      width: min(18rem, 70vw);
-      height: 4px;
-      margin: 2rem auto 0;
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.1rem;
+      margin-top: 2rem;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--aqua), var(--rose), var(--gold));
-      box-shadow: 0 0 28px rgba(94, 231, 223, 0.42);
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(90deg, rgba(94, 231, 223, 0.22), rgba(255, 126, 182, 0.22));
+      box-shadow: 0 0 28px rgba(94, 231, 223, 0.25);
+    }
+
+    .contact-link:hover {
+      border-color: rgba(255, 255, 255, 0.42);
     }
 
     @media (max-width: 520px) {
@@ -160,15 +171,15 @@
 </head>
 <body>
   <nav aria-label="Primary navigation">
-    <a href="hello-world.html" aria-current="page">Home</a>
+    <a href="hello-world.html">Home</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" aria-current="page">Contact</a>
   </nav>
   <main>
-    <p class="eyebrow">A tiny page with big entrance energy</p>
-    <h1>Hello<br />World</h1>
-    <p>Welcome to your freshly minted HTML file: glossy, responsive, and ready to open in any browser.</p>
-    <div class="sparkline" aria-hidden="true"></div>
+    <p class="eyebrow">Start a conversation</p>
+    <h1>Contact<br />Us</h1>
+    <p>Have a question, idea, or note to share? Send a quick message and keep the momentum going.</p>
+    <a class="contact-link" href="mailto:hello@example.com">hello@example.com</a>
   </main>
 </body>
 </html>
