@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f7fbff;
+      --muted: #b8c7d9;
+      --glass: rgba(9, 20, 34, 0.58);
+      --line: rgba(255, 255, 255, 0.18);
+      --aqua: #5ee7df;
+      --rose: #ff7eb6;
+      --gold: #f9d976;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 22%, rgba(94, 231, 223, 0.32), transparent 26rem),
+        radial-gradient(circle at 82% 18%, rgba(255, 126, 182, 0.28), transparent 24rem),
+        radial-gradient(circle at 50% 90%, rgba(249, 217, 118, 0.2), transparent 28rem),
+        linear-gradient(135deg, #07111f 0%, #102132 52%, #160f27 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, black, transparent 76%);
+    }
+
+    main {
+      width: min(92vw, 760px);
+      padding: clamp(2rem, 6vw, 4.75rem);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--glass);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(22px) saturate(135%);
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(120deg, var(--aqua), transparent 30%, var(--rose), var(--gold));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      z-index: -1;
+    }
+
+    .eyebrow {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.8rem, 13vw, 8.8rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+      background: linear-gradient(90deg, #ffffff, var(--aqua), var(--rose), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 42px rgba(94, 231, 223, 0.18);
+    }
+
+    p:not(.eyebrow) {
+      max-width: 42rem;
+      margin: 1.45rem auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.8vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    .sparkline {
+      width: min(18rem, 70vw);
+      height: 4px;
+      margin: 2rem auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--aqua), var(--rose), var(--gold));
+      box-shadow: 0 0 28px rgba(94, 231, 223, 0.42);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">A tiny page with big entrance energy</p>
+    <h1>Hello<br />World</h1>
+    <p>Welcome to your freshly minted HTML file: glossy, responsive, and ready to open in any browser.</p>
+    <div class="sparkline" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
